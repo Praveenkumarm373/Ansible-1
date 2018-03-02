@@ -1,0 +1,8 @@
+# Test the Async feature in Ansible
+ - name: sample command playbook
+   hosts: localhost
+   connection: local
+   gather_facts: false
+   tasks:
+     - name: sample command2
+       ping:
