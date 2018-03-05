@@ -6,3 +6,7 @@
    tasks:
      - name: sample command2
        ping:
+       register: ps_output
+       
+     - debug:
+         msg: "{{ ps_output }}"
