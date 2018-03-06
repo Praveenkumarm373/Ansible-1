@@ -9,4 +9,4 @@
        register: ps_output
        
      - debug:
-         msg: "Hi all Smrithi {{ ps_output }}"
+         msg: "Hi al im{{ ps_output }}"
