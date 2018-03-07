@@ -2,7 +2,7 @@
 # File: roles/asg/tasks/main.yml
   - name: Create Loadbalance
     ec2_elb_lb:
-      name: "{{ Vvpc_name }}ELBv2"
+      name: "{{ Vvpc_name }}ELB"
       state: present
       connection_draining_timeout: 60
       idle_timeout: 300
@@ -29,7 +29,7 @@
 
   - name: Create Launch Configuration
     ec2_lc:
-      name: "{{ Vvpc_name }}LCv2"
+      name: "{{ Vvpc_name }}LC"
       image_id: "{{ Vwebami }}"
       key_name: "{{ Vkey_name }}"
       security_groups: "{{ Vwebsg_id }}"
@@ -40,14 +40,14 @@
 
   - name: Create Autoscaling group
     ec2_asg:
-      name: "{{ Vvpc_name }}ASGv2"
-      launch_config_name: "{{ Vvpc_name }}LCv2"
-      load_balancers: "{{ Vvpc_name }}ELBv2"
+      name: "{{ Vvpc_name }}ASG"
+      launch_config_name: "{{ Vvpc_name }}LC"
+      load_balancers: "{{ Vvpc_name }}ELB"
       health_check_period: 60
       health_check_type: ELB
-      min_size: 3
+      min_size: 2
       max_size: 5
-      desired_capacity: 3
+      desired_capacity: 2
       vpc_zone_identifier: [ '{{ Vwebsn_ida }}', '{{ Vwebsn_idb }}' ]
       region: "{{ Vregion }}"
       state: present
@@ -58,7 +58,7 @@
     ec2_scaling_policy:
       region: "{{ Vregion }}"
       name: "{{ item.name }}"
-      asg_name: "{{ Vvpc_name }}ASGv2"
+      asg_name: "{{ Vvpc_name }}ASG"
       state: present
       adjustment_type: "{{ item.adjustment_type }}"
       min_adjustment_step: "{{ item.min_adjustment_step }}"
