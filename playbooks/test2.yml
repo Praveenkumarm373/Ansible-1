@@ -9,4 +9,4 @@
        register: ps_output
        
      - debug:
-         msg: "Hi al im{{ ps_output }}"
+         msg: "Hi finally done {{ ps_output }}"
