@@ -109,4 +109,20 @@
 #     alarm_actions: "{{ item.alarm_actions }}"
 #   with_items: metric_alarms
 #   register: Rma
+##
+
+  - name: Create Autoscaling group
+    ec2_asg:
+      name: "{{ Vvpc_name }}ASG"
+      launch_config_name: "{{ Vvpc_name }}LC"
+      load_balancers: "{{ Vvpc_name }}ELB"
+      health_check_period: 60
+      health_check_type: ELB
+      min_size: 3
+      max_size: 5
+      desired_capacity: 3
+      vpc_zone_identifier: [ '{{ Vwebsn_ida }}', '{{ Vwebsn_idb }}' ]
+      region: "{{ Vregion }}"
+      state: absent
+
 ...
