@@ -22,7 +22,7 @@ Vbastion_id: "[u'i-a877e73d']"
 Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 
 #EC2 and application
-Vami: "ami-7172b611"
+Vami: "ami-768d1a0e"
 Vinstance_type: "t2.micro"
 Vkey_name: "nirmalan_keypair"
 Vwebec2_name: "testweb"
@@ -52,4 +52,5 @@ Vwebimage_id: "i-8c4a3b18"
 Vwebimage_ip: "54.202.253.233"
 Vwebami: "ami-b943c1d9"
 Vversion: "6"
+Vtestversion: "14"
 Vproj_name: demo

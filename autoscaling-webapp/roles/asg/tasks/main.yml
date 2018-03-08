@@ -2,7 +2,7 @@
 # File: roles/asg/tasks/main.yml
   - name: Create Loadbalance
     ec2_elb_lb:
-      name: "{{ Vvpc_name }}ELBv2"
+      name: "{{ Vvpc_name }}ELB{{ Vtestversion}}"
       state: present
       connection_draining_timeout: 60
       idle_timeout: 300
@@ -20,8 +20,8 @@
          instance_port: 80
       health_check:
          ping_protocol: http # options are http, https, ssl, tcp
-         ping_port: 80
-         ping_path: "/index.html" # not required for tcp or ssl
+         ping_port: 8080
+         ping_path: "/healthcheck.html" # not required for tcp or ssl
          response_timeout: 15 # seconds
          interval: 60 # seconds
          unhealthy_threshold: 3
@@ -29,7 +29,7 @@
 
   - name: Create Launch Configuration
     ec2_lc:
-      name: "{{ Vvpc_name }}LCv2"
+      name: "{{ Vvpc_name }}LC{{ Vtestversion}}"
       image_id: "{{ Vwebami }}"
       key_name: "{{ Vkey_name }}"
       security_groups: "{{ Vwebsg_id }}"
@@ -41,8 +41,8 @@
   - name: Create Autoscaling group
     ec2_asg:
       name: "{{ Vvpc_name }}ASGv2"
-      launch_config_name: "{{ Vvpc_name }}LCv2"
-      load_balancers: "{{ Vvpc_name }}ELBv2"
+      launch_config_name: "{{ Vvpc_name }}LC{{ Vtestversion}}"
+      load_balancers: "{{ Vvpc_name }}ELB{{ Vtestversion}}"
       health_check_period: 60
       health_check_type: ELB
       min_size: 3
@@ -58,7 +58,7 @@
     ec2_scaling_policy:
       region: "{{ Vregion }}"
       name: "{{ item.name }}"
-      asg_name: "{{ Vvpc_name }}ASGv2"
+      asg_name: "{{ Vvpc_name }}ASG{{ Vtestversion}}"
       state: present
       adjustment_type: "{{ item.adjustment_type }}"
       min_adjustment_step: "{{ item.min_adjustment_step }}"
@@ -110,19 +110,5 @@
 #   with_items: metric_alarms
 #   register: Rma
 ##
-
-  - name: Create Autoscaling group
-    ec2_asg:
-      name: "{{ Vvpc_name }}ASG"
-      launch_config_name: "{{ Vvpc_name }}LC"
-      load_balancers: "{{ Vvpc_name }}ELB"
-      health_check_period: 60
-      health_check_type: ELB
-      min_size: 3
-      max_size: 5
-      desired_capacity: 3
-      vpc_zone_identifier: [ '{{ Vwebsn_ida }}', '{{ Vwebsn_idb }}' ]
-      region: "{{ Vregion }}"
-      state: absent
 
 ...
