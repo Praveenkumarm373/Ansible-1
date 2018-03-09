@@ -4,6 +4,7 @@
  - name: Declare variables for webami version
    set_fact:
      Vversion: 6
+     Vtestversion: '{{ Vtestversion |int + 1 }}'
 
 # Create web app AMI
  - name: Create AMI of nginx web server
@@ -22,5 +23,6 @@
 
  - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Vwebami line='Vwebami: \"{{ Vwebami }}\"'"  
  - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Vversion line='Vversion: \"{{ Vversion }}\"'"
+- lineinfile: "dest=roles/common/defaults/main.yml regexp=^Vtestversion line='Vtestversion: \"{{ Vtestversion }}\"'"
 ...
  
