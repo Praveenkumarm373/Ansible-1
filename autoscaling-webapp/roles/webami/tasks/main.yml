@@ -41,6 +41,6 @@
      state: absent
      wait: yes
    register: Rwebimage
-     - debug: var=Rwebimage
+ - debug: var=Rwebimage
 ...
  
