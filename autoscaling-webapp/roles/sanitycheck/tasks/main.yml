@@ -1,6 +1,6 @@
 ---
 # tasks file for roles/sanitycheck
-- name: test the ports connctivity
+- name: test the ports connectivity
   wait_for:
     host: "{{ Velbdns }}" 
     port: "{{ item }}"
@@ -10,3 +10,8 @@
 #  ignore_errors: yes
   with_items:
     - 80
+  register: Rsanity
+  
+- name: test result
+  debug: 
+    msg: "Connectivity test succeded to the endpoint {{ Velbdns }}"
