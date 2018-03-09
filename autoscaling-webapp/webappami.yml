@@ -15,6 +15,9 @@
    roles:
     - common
     - nginx
+    - adduser
+   tags:
+    - testnginx
 
  - hosts: localhost
    connection: local
