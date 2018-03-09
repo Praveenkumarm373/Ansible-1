@@ -2,9 +2,9 @@
 # File: roles/delasg/tasks/main.yml
   - name: Delete Autoscaling group
     ec2_asg:
-      name: "{{ Vvpc_name }}ASG"
-      launch_config_name: "{{ Vvpc_name }}LC"
-      load_balancers: "{{ Vvpc_name }}ELB"
+      name: "{{ Vvpc_name }}ASG{{Vtestversion |int - 1 }}"
+      launch_config_name: "{{ Vvpc_name }}LC{{Vtestversion |int - 1 }}"
+      load_balancers: "{{ Vvpc_name }}ELB{{Vtestversion |int - 1 }}"
       health_check_period: 60
       health_check_type: ELB
       min_size: 3
@@ -16,7 +16,7 @@
 
   - name: Delete Launch Configuration
     ec2_lc:
-      name: "{{ Vvpc_name }}LC"
+      name: "{{ Vvpc_name }}LC{{Vtestversion |int - 1 }}"
       image_id: "{{ Vwebami }}"
       key_name: "{{ Vkey_name }}"
       security_groups: "{{ Vwebsg_id }}"
@@ -27,7 +27,7 @@
 
   - name: Delete Loadbalance
     ec2_elb_lb:
-      name: "{{ Vvpc_name }}ELB"
+      name: "{{ Vvpc_name }}ELB{{Vtestversion |int - 1 }}"
       state: absent
       connection_draining_timeout: 60
       idle_timeout: 300

@@ -4,7 +4,7 @@
  - name: Declare variables for webami version
    set_fact:
      Vversion: 6
-     Vtestversion: '{{ Vtestversion }} + 1'
+     Vtestversion: '{{ Vtestversion |int  + 1 }}'
 
 # Create web app AMI
  - name: Create AMI of nginx web server
