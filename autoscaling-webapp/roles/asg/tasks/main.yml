@@ -33,7 +33,6 @@
       Velbdns: "{{ Relb.elb.dns_name }}"
 
   - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Velbdns line='Velbdns: \"{{ Velbdns }}\"'"
-  - fail: msg="{{ Relb }}"
 
   - name: Create Launch Configuration
     ec2_lc:
