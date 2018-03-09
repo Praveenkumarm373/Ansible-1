@@ -21,6 +21,9 @@ Vnatec2_id: "i-d778e842"
 Vbastion_id: "[u'i-a877e73d']"
 Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 
+#ELB
+Velbdns: "demoELB14-600193175.us-west-2.elb.amazonaws.com"
+
 #EC2 and application
 Vami: "ami-768d1a0e"
 Vinstance_type: "t2.micro"

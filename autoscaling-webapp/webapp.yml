@@ -1,8 +1,9 @@
 ---
 # file: webapp.yml
 
- - hosts: tag_Name_nginx_base
+ - hosts: test
    become: true
+   user: ec2-user
    roles:
     - common
     - nginx

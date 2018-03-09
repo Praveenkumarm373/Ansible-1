@@ -1,0 +1,12 @@
+---
+# tasks file for roles/sanitycheck
+- name: test the ports connctivity
+  wait_for:
+    host: "{{ Velbdns }}" 
+    port: "{{ item }}"
+    state: started         # Port should be open
+    delay: 0               # No wait before first check (sec)
+    timeout: 3             # Stop checking after timeout (sec)
+#  ignore_errors: yes
+  with_items:
+    - 80

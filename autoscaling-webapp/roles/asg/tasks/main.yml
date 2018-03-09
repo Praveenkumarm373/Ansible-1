@@ -26,6 +26,14 @@
          interval: 60 # seconds
          unhealthy_threshold: 3
          healthy_threshold: 5
+    register: Relb
+
+  - name: Declare variables for ELB endpoints
+    set_fact:
+      Velbdns: "{{ Relb.elb.dns_name }}"
+
+  - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Velbdns line='Velbdns: \"{{ Velbdns }}\"'"
+  - fail: msg="{{ Relb }}"
 
   - name: Create Launch Configuration
     ec2_lc:
@@ -40,7 +48,7 @@
 
   - name: Create Autoscaling group
     ec2_asg:
-      name: "{{ Vvpc_name }}ASGv2"
+      name: "{{ Vvpc_name }}ASG{{ Vtestversion}}"
       launch_config_name: "{{ Vvpc_name }}LC{{ Vtestversion}}"
       load_balancers: "{{ Vvpc_name }}ELB{{ Vtestversion}}"
       health_check_period: 60
@@ -51,6 +59,9 @@
       vpc_zone_identifier: [ '{{ Vwebsn_ida }}', '{{ Vwebsn_idb }}' ]
       region: "{{ Vregion }}"
       state: present
+      tags:
+       - Name: "{{ Vvpc_name }}WEB{{ Vtestversion}}"
+         propagate_at_launch: yes
 
 
 
