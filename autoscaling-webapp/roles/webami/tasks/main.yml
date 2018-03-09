@@ -30,6 +30,7 @@
  - name: terminate Web instances for golden image
    ec2:
      image: "{{ Vami }}"
+     instance_ids: "{{ Vwebimage_id }}"
      instance_type: "{{ Vinstance_type }}"
      key_name: "{{ Vkey_name }}"
      group_id: "{{ Vwebsg_id }}"

@@ -51,9 +51,9 @@ Vwebsn_idb: "subnet-af6093e4"
 Vnatsn_id: "subnet-08649743"
 
 #web Golden Image instances and AMI
-Vwebimage_id: "i-08f34199dc41e08a4"
-Vwebimage_ip: "34.214.65.194"
-Vwebami: "ami-6c3daa14"
+Vwebimage_id: "i-0b07c1d5719adc8ef"
+Vwebimage_ip: "34.215.46.134"
+Vwebami: "ami-a838afd0"
 Vversion: "6"
 Vtestversion: "16"
 Vproj_name: demo
