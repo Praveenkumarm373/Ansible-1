@@ -22,7 +22,7 @@
      - name: Set Variable for web instance id and public ip
        set_fact:
          Vwebimage_id: "{{ Rwebimage.instances.0.id }}"
-         Vwebimage_ip: "{{ Rwebimage.instances.0.public_ip }}"
+         Vwebimage_ip: "{{ Rwebimage.instances.0.private_ip }}"
      - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Vwebimage_id line='Vwebimage_id: \"{{ Vwebimage_id }}\"'"
      - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Vwebimage_ip line='Vwebimage_ip: \"{{ Vwebimage_ip }}\"'"
 

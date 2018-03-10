@@ -7,7 +7,7 @@
     - common
     - webimage
 
- - hosts: tag_Name_nginx_base 
+ - hosts: "{{ Vwebimage_ip }}" 
    become: true
    gather_facts: true
    vars:
