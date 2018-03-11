@@ -1,0 +1,27 @@
+---
+# tasks file for roles/route53hz
+- name: private zone for WEB/ELB endpoints
+  route53_zone:
+    zone: emp.demo.com
+    state: present
+    vpc_id: '{{ Vvpc_id }}'
+    comment: 'Hosted Zone for Web'
+    region: "{{ Vregion }}"
+    vpc_region: "{{ Vregion }}"
+  register: Rroute53
+- debug: msg="{{ Rroute53 }}"
+
+- name: add ELB record in Route53
+  route53:
+    state: present
+    private_zone: yes
+    zone: emp.demo.com
+    record: web.emp.demo.com
+    weight: 255
+    identifier: demoforus
+    type: CNAME
+    ttl: 60
+    value: "{{ Velbdns }}"
+    overwrite: yes
+#    alias: True
+#    alias_hosted_zone_id: "demotestagain"
