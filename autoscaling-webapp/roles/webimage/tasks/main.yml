@@ -33,9 +33,15 @@
          delay: 10
          timeout: 320
          state: started
-      
-     - name: refresh inventory
-       local_action: command hosts/ec2.py --refresh-cache
+
+     - name: Add nginximage group member
+       add_host:
+          name: "{{ Vwebimage_ip }}"
+          groups: nginximage   
+
+
+#     - name: refresh inventory
+#       local_action: command hosts/ec2.py --refresh-cache
       
      - name: cooling period to initiate configuration
        pause: minutes=1
