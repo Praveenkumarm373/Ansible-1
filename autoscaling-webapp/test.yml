@@ -1,11 +1,11 @@
 ---
 # file: compute.yml
 
- - hosts: localhost
-   connection: local
-   gather_facts: true
-   roles:
-    - common
-    - temp2
+ - hosts: tag_Name_Web_portal
+   user: ec2-user
+#   connection: local
+   gather_facts: false
+   tasks:
+    - ping:
 
 

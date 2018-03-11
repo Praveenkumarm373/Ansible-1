@@ -6,8 +6,10 @@
    roles:
     - common
     - webimage
+   tags:
+     - testnginx
 
- - hosts: "{{ Vwebimage_ip }}" 
+ - hosts: nginximage 
    become: true
    gather_facts: true
    vars:

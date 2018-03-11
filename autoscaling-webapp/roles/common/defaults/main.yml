@@ -22,7 +22,7 @@ Vbastion_id: "[u'i-a877e73d']"
 Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 
 #ELB
-Velbdns: "demoELB18-617455210.us-west-2.elb.amazonaws.com"
+Velbdns: "demoELB19-23166870.us-west-2.elb.amazonaws.com"
 
 #EC2 and application
 Vami: "ami-768d1a0e"
@@ -34,8 +34,8 @@ Vwebec2_ip: "54.187.234.90"
 Vwebsg_id: "sg-d6cee9a9"
 Vwebsn_id: "subnet-44899b20"
    # for asg
-Vwebsn_ida: "subnet-c0a94da7"
-Vwebsn_idb: "subnet-006f5176"
+Vwebsn_ida: "subnet-af6093e4"
+Vwebsn_idb: "subnet-9bfe2ee2"
 Vweb_count: "1"
 Vdbec2_name: "testdb"
 Vdbec2_id: "[u'i-2276e6b7']"
@@ -46,14 +46,12 @@ Vdb_count: 1
 Vpri_sn_id: 
 Vsubnet_cidr_puba: "70.0.10.0/24"
 Vsubnet_cidr_pubb: "70.0.20.0/24"
-Vwebsn_ida: "subnet-9bfe2ee2"
-Vwebsn_idb: "subnet-af6093e4"
 Vnatsn_id: "subnet-08649743"
 
 #web Golden Image instances and AMI
-Vwebimage_id: "i-095baf944fc99fd7a"
-Vwebimage_ip: "34.212.148.131"
-Vwebami: "ami-6d2bbc15"
+Vwebimage_id: "i-09d828d28c6286844"
+Vwebimage_ip: "70.0.10.224"
+Vwebami: "ami-aa1e88d2"
 Vversion: "6"
-Vtestversion: "18"
+Vtestversion: "23"
 Vproj_name: demo
