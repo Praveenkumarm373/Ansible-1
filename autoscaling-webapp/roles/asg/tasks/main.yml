@@ -4,7 +4,9 @@
     set_fact:
       Velbdns_blue: "{{ Velbdns }}"
   
-  - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Velbdns_blue line='Velbdns_blue: \"{{ Velbdns_blue }}\"'"
+  - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Velbdns_blue: line='Velbdns_blue: \"{{ Velbdns_blue }}\"'"
+  - fail: msg="{{Velbdns_blue}}"
+
 
   - name: Create Loadbalance
     ec2_elb_lb:
