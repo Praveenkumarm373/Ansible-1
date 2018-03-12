@@ -1,5 +1,11 @@
 ---
 # File: roles/asg/tasks/main.yml
+  - name: Move existing ELB endpoint to BlueDeploy
+    set_fact:
+      Velbdns_blue: "{{ Velbdns }}"
+  
+  - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Velbdns_blue line='Velbdns_blue: \"{{ Velbdns_blue }}\"'"
+
   - name: Create Loadbalance
     ec2_elb_lb:
       name: "{{ Vvpc_name }}ELB{{ Vtestversion}}"

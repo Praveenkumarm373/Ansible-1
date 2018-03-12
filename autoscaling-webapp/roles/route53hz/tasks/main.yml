@@ -2,7 +2,7 @@
 # tasks file for roles/route53hz
 - name: private zone for WEB/ELB endpoints
   route53_zone:
-    zone: emp.demo.com
+    zone: bgdemo.com
     state: present
     vpc_id: '{{ Vvpc_id }}'
     comment: 'Hosted Zone for Web'
@@ -15,13 +15,15 @@
   route53:
     state: present
     private_zone: yes
-    zone: emp.demo.com
-    record: web.emp.demo.com
-    weight: 255
-    identifier: demoforus
+    zone: bgdemo.com
+    record: web.bgdemo.com
+    weight: '{{ item.1 }}'
+    identifier: '{{ item.2 }}'
     type: CNAME
     ttl: 60
-    value: "{{ Velbdns }}"
+    value: "{{ item.0 }}"
     overwrite: yes
-#    alias: True
-#    alias_hosted_zone_id: "demotestagain"
+  with_together:
+   - ["{{ Velbdns }}", "{{ Velbdns_blue }}" ]
+   - [ 255, 0 ]
+   - [ "GreenDeploy", "BlueDeploy" ]
