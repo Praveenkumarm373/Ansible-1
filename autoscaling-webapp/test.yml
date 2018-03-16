@@ -6,6 +6,6 @@
 #   connection: local
    gather_facts: false
    tasks:
-    - ping:
+      - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Velbdns_blue: line='Velbdns_blue: 99'"
 
 
