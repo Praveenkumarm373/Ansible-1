@@ -9,7 +9,7 @@
     timeout: 3             # Stop checking after timeout (sec)
 #  ignore_errors: yes
   with_items:
-    - 80
+    - '{{ Vportscan }}'
   register: Rsanity
   
 - name: test result
