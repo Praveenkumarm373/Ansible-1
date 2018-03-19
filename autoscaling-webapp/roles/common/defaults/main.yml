@@ -55,5 +55,5 @@ Vwebimage_ip: "70.0.10.111"
 Vwebami: "ami-07920f7f"
 Vversion: "6"
 Vtestversion: "10"
-Vportscan: '80'
+Vportscan: '90'
 Vproj_name: demo
