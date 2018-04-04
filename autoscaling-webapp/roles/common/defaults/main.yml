@@ -50,10 +50,14 @@ Vsubnet_cidr_pubb: "70.0.20.0/24"
 Vnatsn_id: "subnet-08649743"
 
 #web Golden Image instances and AMI
-Vwebimage_id: "i-0f0f23dfb57add149"
-Vwebimage_ip: "70.0.10.111"
+Vwebimage_id: "i-09e649a34dc4411ed"
+Vwebimage_ip: "70.0.10.60"
 Vwebami: "ami-07920f7f"
 Vversion: "6"
 Vtestversion: "10"
 Vportscan: '90'
 Vproj_name: demo
+
+#Access key and secret access key
+Vaccess_key: "AKIAIWNSL23TZAZILP4Q"
+Vsecret_key: "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"
