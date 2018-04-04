@@ -1,11 +1,9 @@
 ---
 # file: compute.yml
 
- - hosts: tag_Name_Web_portal
+ - hosts: localhost
    user: ec2-user
-#   connection: local
+   connection: local
    gather_facts: false
    tasks:
-      - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Velbdns_blue: line='Velbdns_blue: 99'"
-
-
+      - ping:
