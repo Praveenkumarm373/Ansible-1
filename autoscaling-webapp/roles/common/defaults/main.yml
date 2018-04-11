@@ -50,11 +50,11 @@ Vsubnet_cidr_pubb: "70.0.20.0/24"
 Vnatsn_id: "subnet-08649743"
 
 #web Golden Image instances and AMI
-Vwebimage_id: "i-09e649a34dc4411ed"
-Vwebimage_ip: "70.0.10.60"
-Vwebami: "ami-07920f7f"
+Vwebimage_id: "i-00e6a9b78823216df"
+Vwebimage_ip: "70.0.10.137"
+Vwebami: "ami-33cdad4b"
 Vversion: "6"
-Vtestversion: "10"
+Vtestversion: "11"
 Vportscan: '90'
 Vproj_name: demo
 
