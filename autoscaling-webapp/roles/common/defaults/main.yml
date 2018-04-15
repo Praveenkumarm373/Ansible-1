@@ -54,7 +54,7 @@ Vwebimage_id: "i-0e71a3920ddad7d12"
 Vwebimage_ip: "70.0.10.4"
 Vwebami: "ami-80234ef8"
 Vversion: "6"
-Vtestversion: "21"
-Vportscan: '90'
+Vtestversion: "16"
+Vportscan: '80'
 Vproj_name: demo
 
