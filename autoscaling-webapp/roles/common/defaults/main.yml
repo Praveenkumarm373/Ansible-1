@@ -51,8 +51,8 @@ Vsubnet_cidr_pubb: "70.0.20.0/24"
 Vnatsn_id: "subnet-08649743"
 
 #web Golden Image instances and AMI
-Vwebimage_id: "i-02f6b1f00edd62c7b"
-Vwebimage_ip: "70.0.10.13"
+Vwebimage_id: "i-05768bffe7bd35465"
+Vwebimage_ip: "70.0.10.20"
 Vwebami: "ami-08c5a970"
 Vversion: "6"
 Vtestversion: "10"
