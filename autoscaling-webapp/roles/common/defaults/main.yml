@@ -24,7 +24,7 @@ Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 #ELB
 Velbdns: "demoELB18-464833638.us-west-2.elb.amazonaws.com"
 Velbdns_blue: "demoELB17-1935116811.us-west-2.elb.amazonaws.com"
-Vasg_capacity: 3
+Vasg_capacity: 2
 
 #EC2 and application
 Vami: "ami-768d1a0e"
