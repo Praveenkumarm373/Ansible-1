@@ -22,7 +22,7 @@ Vbastion_id: "[u'i-a877e73d']"
 Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 
 #ELB
-Velbdns: "demoELB23-1835816488.us-west-2.elb.amazonaws.com"
+Velbdns: "demoELB34-1835816488.us-west-2.elb.amazonaws.com"
 Velbdns_blue: "demoELB22-1185003431.us-west-2.elb.amazonaws.com"
 Vasg_capacity: 2
 
