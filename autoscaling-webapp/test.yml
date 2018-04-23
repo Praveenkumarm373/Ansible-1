@@ -6,6 +6,10 @@
    connection: local
    gather_facts: false
    tasks:
-      - ping:
+     - name: Declare variables for webami version
+       set_fact:
+        Vversion: 6
+        Vtestversion: 90
+     - lineinfile: "dest=roles/common/defaults/main.yml regexp=^Vtestversion line='Vtestversion: \"{{ Vtestversion }}\"'"
    
       
