@@ -16,7 +16,7 @@
     state: present
     private_zone: yes
     zone: bgdemo.com
-    record: web.bgdemo.com
+    record: web.ihgdemo.com
     weight: '{{ item.1 }}'
     identifier: '{{ item.2 }}'
     type: CNAME
