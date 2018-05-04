@@ -22,8 +22,8 @@ Vbastion_id: "[u'i-a877e73d']"
 Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 
 #ELB
-Velbdns: "demoELB148-900020668.us-west-2.elb.amazonaws.com"
-Velbdns_blue: "demoELB147-368219070.us-west-2.elb.amazonaws.com"
+Velbdns: "demoELB149-1261783775.us-west-2.elb.amazonaws.com"
+Velbdns_blue: "demoELB148-900020668.us-west-2.elb.amazonaws.com"
 Vasg_capacity: 3
 
 #EC2 and application
@@ -51,11 +51,11 @@ Vsubnet_cidr_pubb: "70.0.20.0/24"
 Vnatsn_id: "subnet-08649743"
 
 #web Golden Image instances and AMI
-Vwebimage_id: "i-0ef660807448d5ddf"
-Vwebimage_ip: "70.0.10.218"
-Vwebami: "ami-06e48e7e"
+Vwebimage_id: "i-06eec95bb4f0fd229"
+Vwebimage_ip: "70.0.10.139"
+Vwebami: "ami-0f601777"
 Vversion: "6"
-Vtestversion: "148"
+Vtestversion: "149"
 Vportscan: '80'
 Vproj_name: demo
 
