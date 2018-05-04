@@ -27,7 +27,7 @@ Velbdns_blue: "demoELB148-900020668.us-west-2.elb.amazonaws.com"
 Vasg_capacity: 3
 
 #EC2 and application
-Vami: "ami-768d1a0e"
+Vami: "ami-0e681f76"
 Vinstance_type: "t2.micro"
 Vkey_name: "nirmalan_keypair"
 Vwebec2_name: "testweb"
