@@ -24,7 +24,7 @@ Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 #ELB
 Velbdns: "demoELB157-287664830.us-west-2.elb.amazonaws.com"
 Velbdns_blue: "demoELB156-1810878288.us-west-2.elb.amazonaws.com"
-Vasg_capacity: 3 
+Vasg_capacity: 2 
 
 #EC2 and application
 Vami: "ami-0e681f76"
@@ -56,6 +56,6 @@ Vwebimage_ip: "70.0.10.112"
 Vwebami: "ami-f8d0a680"
 Vversion: "6"
 Vtestversion: "157"
-Vportscan: '80'
+Vportscan: '90'
 Vproj_name: demo
 
