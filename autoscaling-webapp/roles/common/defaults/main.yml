@@ -24,7 +24,7 @@ Vbastion_dns: "ec2-54-244-182-101.us-west-2.compute.amazonaws.com"
 #ELB
 Velbdns: "demoELB161-1052869109.us-west-2.elb.amazonaws.com"
 Velbdns_blue: "demoELB160-2051850056.us-west-2.elb.amazonaws.com"
-Vasg_capacity: 3 
+Vasg_capacity: 2
 
 #EC2 and application
 Vami: "ami-0e681f76"
@@ -35,7 +35,7 @@ Vwebec2_id: "[u'i-4f2c6157']"
 Vwebec2_ip: "54.187.234.90"
 Vwebsg_id: "sg-d6cee9a9"
 Vwebsn_id: "subnet-44899b20"
-   # for asg
+# for asg
 Vwebsn_ida: "subnet-af6093e4"
 Vwebsn_idb: "subnet-9bfe2ee2"
 Vweb_count: "1"
@@ -56,6 +56,6 @@ Vwebimage_ip: "70.0.10.63"
 Vwebami: "ami-6553201d"
 Vversion: "6"
 Vtestversion: "161"
-Vportscan: '90'
+Vportscan: '80'
 Vproj_name: demo
 
